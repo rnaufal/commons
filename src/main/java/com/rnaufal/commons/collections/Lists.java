@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.rnaufal.commons.collections;
 
 import java.util.ArrayList;
