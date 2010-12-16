@@ -2,6 +2,7 @@ package com.rnaufal.commons.collections;
 
 import static com.rnaufal.commons.collections.Lists.arrayAsList;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.TreeSet;
@@ -19,6 +20,15 @@ public class Sets {
 	return new HashSet<E>();
     }
 
+    public static <E> HashSet<E> newHashSet(Collection<? extends E> elements) {
+	return new HashSet<E>(elements);
+    }
+
+    public static <E> HashSet<E> newLinkedHashSet(
+	    Collection<? extends E> elements) {
+	return new LinkedHashSet<E>(elements);
+    }
+
     public static <E> HashSet<E> newLinkedHashSet() {
 	return new LinkedHashSet<E>();
     }
@@ -26,8 +36,8 @@ public class Sets {
     public static <E> TreeSet<E> newTreeSet() {
 	return new TreeSet<E>();
     }
-    
-    public static <E> HashSet<E> arrayAsSet(E ... elements) {
+
+    public static <E> HashSet<E> arrayAsSet(E... elements) {
 	return new HashSet<E>(arrayAsList(elements));
     }
 
