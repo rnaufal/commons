@@ -5,6 +5,7 @@ import static com.rnaufal.commons.collections.Lists.arrayAsList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -41,4 +42,10 @@ public class Sets {
 	return new HashSet<E>(arrayAsList(elements));
     }
 
+    public static <E> Set<? extends E> union(Set<? extends E> first,
+	    Set<? extends E> second) {
+	Set<E> result = newHashSet(first);
+	result.addAll(second);
+	return result;
+    }
 }
